@@ -7,7 +7,7 @@ class Pokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: {}
+      items: null
     };
   }
 
@@ -32,20 +32,34 @@ class Pokemon extends Component {
       return <h1>Loading</h1>
     } else {
 
-      const numero = this.state.items.numéro;
-      const nom = this.state.items.nom;
-      const nomen = this.state.items.nomen;
-      const attaques = this.state.items.attaques;
+      // const numero = this.state.items.numéro;
+      // const nom = this.state.items.nom;
+      // const nomen = this.state.items.nomen;
+      // const attaques = this.state.items.attaques;
+
+      const { numero, nom, espece, taille, poids, attaques } = this.state.items
+
       // const listAttaques = attaques.map((d) => <span key={d.nom}>{d.nom}</span>);
 
       // const listAttaques = Object.entries(attaques).map(([key, value]) => (
       //           <p key={ key }> Hello, { attaques[key].nom } </p>
       //     ))
 
-      console.log(numero);
-      console.log(nom);
-      console.log(nomen);
-      console.log(attaques);
+      // const listAttaques = null
+      //
+      // if (attaques) {
+      //   listAttaques = attaques.map(function(data, idx) {
+      //     return ([
+      //       <p key={idx}>{data.nom}</p>,
+      //       <p key={idx}>{data.puissance}</p>,
+      //     ]);
+      //   });
+      //   console.log(listAttaques);
+      // }
+
+      // console.log(numero);
+      // console.log(nom);
+      // console.log(espece);
 
 
       // const persons = Object.keys(attaques).map((key, i) => (
@@ -56,7 +70,13 @@ class Pokemon extends Component {
 
       return (
         <div id="layout-content" className="layout-content-wrapper">
-        <div className="panel-list"></div>
+        <div className="panel-list">{ numero }, { nom }, { espece }, { taille }, { poids }</div>
+        {attaques.map((key, i) => (
+          <ul key={i}>
+            <li>{key.nom}</li>
+            <li>{key.puissance}</li>
+          </ul>
+        ))}
         </div>
       );
     }
