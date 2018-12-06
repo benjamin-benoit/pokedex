@@ -71,10 +71,14 @@ class Pokemon extends Component {
       return (
         <div id="layout-content" className="layout-content-wrapper">
         <div className="panel-list">{ numero }, { nom }, { espece }, { taille }, { poids }</div>
+        <h1>Attaques:</h1>
         {attaques.map((key, i) => (
           <ul key={i}>
-            <li>{key.nom}</li>
-            <li>{key.puissance}</li>
+            <li>nom: {key.nom}</li>
+            <li>niveau: {key.niveau}</li>
+            <li>puissance: {key.puissance}</li>
+            <li>precision: {key.precision}</li>
+            <li>pp: {key.pp}</li>
           </ul>
         ))}
         </div>

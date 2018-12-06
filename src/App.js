@@ -4,11 +4,13 @@ import './App.css';
 import PokeList from './PokeList';
 import Pokemon from './Pokemon';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import Header from './Header';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+      <Header />
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={PokeList} />

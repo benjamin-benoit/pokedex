@@ -28,14 +28,18 @@ class PokeList extends Component {
     // this.props.match.params.id
     // console.log(this.state.items);
     const pokemons = this.state.items.map((item, i) => (
+      <a href={'/pokemon/' + item.ndex}>
       <div className="grid-item">
-        <a href={'/pokemon/' + item.ndex}>{ item.numéro }, { item.nom }</a>
+      <img src={'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + item.ndex + '.png'} />
+      <br/>
+      { item.numéro }<br/>{ item.nom }<br/>
       </div>
+      </a>
     ));
 
     return (
       <div id="layout-content" className="layout-content-wrapper">
-        <div className="panel-list" className="grid-container">{ pokemons }</div>
+      <div className="panel-list" className="grid-container">{ pokemons }</div>
       </div>
     );
   }
