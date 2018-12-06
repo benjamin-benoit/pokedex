@@ -26,3 +26,5 @@ code {
   font-size: 30px;
   text-align: center;
 }
+
+.centered { margin: auto;}
