@@ -27,18 +27,26 @@ class PokeList extends Component {
   render() {
     // this.props.match.params.id
     // console.log(this.state.items);
+
     const pokemons = this.state.items.map((item, i) => (
       <a href={'/pokemon/' + item.ndex}>
-      <div className="col-md card mb-4 shadow-sm">
-      <div className="card-header">{ item.numéro }/{ item.nom }</div>
-      <img src={'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + item.ndex + '.png'} />
+      <div className="card mb-4 shadow-sm">
+        <div className="card-header">{ item.numéro }/{ item.nom }</div>
+        <div className="card-body">
+        <img src={'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + item.ndex + '.png'} />
+        </div>
+        <div className="card-footer">
+        { (item.type2) ? item.type1 + ", " + item.type2 : item.type1 }
+        </div>
       </div>
       </a>
     ));
 
     return (
-      <div id="layout-content" className="container">
-      <div className="row">{ pokemons }</div>
+      <div id="layout-content" className="container-fluid">
+      <div className="card-deck">
+      { pokemons }
+      </div>
       </div>
     );
   }
