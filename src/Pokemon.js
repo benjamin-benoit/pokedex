@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class Pokemon extends Component {
   constructor(props) {
@@ -36,7 +36,12 @@ class Pokemon extends Component {
         jdex,
         njdex,
         hdex,
+        nhdex,
         fdex,
+        sdex,
+        udex,
+        nudex,
+        adex,
         odex,
         opdex,
         espece,
@@ -61,7 +66,7 @@ class Pokemon extends Component {
 
       const listeAttaques = attaques.map((key, i) => (
         <div key={i} className="card top-buffer shadow-sm mb-4">
-          <div className="card-header">{key.nom}</div>
+          <div className="card-header text-center">{key.nom}</div>
           <div className="card-body">
             <span className="d-block">Niveau: {key.niveau}</span>
             <span className="d-block">Puissance: {key.puissance}</span>
@@ -73,6 +78,9 @@ class Pokemon extends Component {
 
       return (
         <main role="main" className="container">
+          <h1>
+            <Link to="/" className="h2">Retourner à la liste</Link>
+          </h1>
           <div className="d-flex align-items-center p-3 my-3 text-gray-dark bg-grey rounded shadow-sm">
             <img
               className="mr-3"
@@ -95,6 +103,7 @@ class Pokemon extends Component {
             </div>
           </div>
 
+          <h4>Numéros:</h4>
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -102,7 +111,12 @@ class Pokemon extends Component {
                 <th scope="col">Johto</th>
                 <th scope="col">Johto HGSS</th>
                 <th scope="col">Hoenn</th>
+                <th scope="col">Hoenn ROSA</th>
                 <th scope="col">Fiore</th>
+                <th scope="col">Sinnoh</th>
+                <th scope="col">Unys</th>
+                <th scope="col">Unys N2B2</th>
+                <th scope="col">Nav Almia</th>
                 <th scope="col">Oblivia</th>
                 <th scope="col">Oblivia (Passé)</th>
               </tr>
@@ -113,7 +127,12 @@ class Pokemon extends Component {
                 <td>{jdex}</td>
                 <td>{njdex}</td>
                 <td>{hdex}</td>
+                <td>{nhdex}</td>
                 <td>{fdex}</td>
+                <td>{sdex}</td>
+                <td>{udex}</td>
+                <td>{nudex}</td>
+                <td>{adex}</td>
                 <td>{odex}</td>
                 <td>{opdex}</td>
               </tr>

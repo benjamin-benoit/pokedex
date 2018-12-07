@@ -22,9 +22,9 @@ class PokeList extends Component {
   render() {
 
     const pokemons = this.state.items.map((item, i) => (
-      <a href={"/pokemon/" + item.ndex}>
+      <Link to={"/pokemon/" + item.ndex}>
         <div className="card mb-4 shadow-sm">
-          <div className="card-header">
+          <div className="card-header text-center">
             {item.numéro}/{item.nom}
           </div>
           <div className="card-body">
@@ -36,11 +36,11 @@ class PokeList extends Component {
               }
             />
           </div>
-          <div className="card-footer">
+          <div className="card-footer text-center">
             {item.type2 ? item.type1 + ", " + item.type2 : item.type1}
           </div>
         </div>
-      </a>
+      </Link>
     ));
 
     return (
