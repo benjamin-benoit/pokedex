@@ -4,7 +4,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="text-center headstyle">
-        <h1>THE AMAZING POKEDEX OF BENJAMIN</h1>
+        <h1>{"L'INCROYABLE POKEDEX DE BENJAMIN"}</h1>
       </div>
     );
   }
